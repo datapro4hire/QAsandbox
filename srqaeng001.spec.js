@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test');
 
 test('Customer can access booking page and select a flight', async ({ page }) => {
   // Navigate to the home page
-  await page.goto('https://example.com');
+  await page.goto('https://redtag.ca');
 
   // Find and click the booking page link
   await page.click('text=Book a Flight');
@@ -11,7 +11,7 @@ test('Customer can access booking page and select a flight', async ({ page }) =>
   await page.waitForSelector('text=Select Your Flight');
 
   // Verify that the booking page has loaded
-  await expect(page).toHaveURL('https://example.com/booking');
+  await expect(page).toHaveURL('https://redtag.ca/booking');
   await expect(page.locator('h1')).toContainText('Select Your Flight');
 
   // Select a flight (assuming there is a list of flights and a button to select one)
